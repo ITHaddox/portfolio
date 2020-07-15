@@ -104,14 +104,13 @@ main {
 
 .about-info {
   display: grid;
-  padding: 0;
-  margin: 10px 30px 10px 0px;
   justify-items: stretch;
-  gap: 30px;
+  margin: auto;
+  gap: 50px;
   grid-template-areas:
     "bioimage bio"
-    "job1 job2"
-    "job3 job3";
+    "job1 job3"
+    "job2 job3";
   // grid-template-columns: repeat(3, 1fr);
   grid-template-columns: 50% 50%;
 
@@ -146,7 +145,7 @@ main {
   .job {
     background: lighten($primary-color, 5);
     border-bottom: $secondary-color 5px solid;
-
+    margin-right: 50px;
     ul {
       list-style-type: none;
 

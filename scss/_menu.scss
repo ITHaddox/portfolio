@@ -1,14 +1,15 @@
 .menu-btn {
   position: absolute;
   z-index: 3;
-  right: 35px;
-  top: 35px;
+  right: 55px;
+  top: 55px;
   cursor: pointer;
   @include easeOut;
 
   .btn-line {
-    width: 28px;
-    height: 3px;
+    width: 40px;
+    height: 5px;
+    border-radius: 10%;
     margin: 0 0 5px 0;
     background: set-text-color($primary-color);
     @include easeOut;
@@ -21,7 +22,7 @@
     .btn-line {
       // Line 1 - Rotate
       &:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(7px, 7px);
       }
       // Line 2 - Hide
       &:nth-child(2) {
@@ -29,7 +30,7 @@
       }
       // Line 3 - Rotate
       &:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: rotate(-45deg) translate(7px, -7px);
       }
     }
   }

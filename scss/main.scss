@@ -21,19 +21,50 @@ h2,
 h3 {
   margin: 0;
   font-weight: 400;
-  &.heading-name {
-    font-size: 6rem;
+  &.lg-heading {
+    font-size: 8rem;
+    position: relative;
+    animation: heading-1;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
   }
-  &.heading-subtitle {
+  &.sm-heading {
+    font-size: 2rem;
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
+    padding: 0.2rem 4rem;
+    background: rgba(lighten($primary-color, 5), 0.5);
+  }
+}
+
+@keyframes heading-1 {
+  0% {
+    top: -100px;
+    opacity: 0%;
+  }
+  100% {
+    top: 0;
+    opacity: inherit;
   }
 }
 
 a {
   color: set-text-color($primary-color);
   text-decoration: none;
+  position: relative;
+  animation: icons;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes icons {
+  0% {
+    left: -200px;
+    opacity: 0%;
+  }
+  100% {
+    left: 0;
+    opacity: inherit;
+  }
 }
 
 header {
@@ -52,6 +83,7 @@ main {
 
   .social-icons {
     margin-top: 1rem;
+    margin-left: 6rem;
     a {
       padding: 0.4rem;
 

@@ -50,21 +50,6 @@ h3 {
 a {
   color: set-text-color($primary-color);
   text-decoration: none;
-  position: relative;
-  animation: icons;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes icons {
-  0% {
-    left: -200px;
-    opacity: 0%;
-  }
-  100% {
-    left: 0;
-    opacity: inherit;
-  }
 }
 
 header {
@@ -84,6 +69,10 @@ main {
   .social-icons {
     margin-top: 1rem;
     margin-left: 6rem;
+    position: relative;
+    animation: icons;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
     a {
       padding: 0.4rem;
 
@@ -102,6 +91,17 @@ main {
   }
 }
 
+@keyframes icons {
+  0% {
+    left: -200px;
+    opacity: 0%;
+  }
+  100% {
+    left: 0;
+    opacity: inherit;
+  }
+}
+
 .about-info {
   display: grid;
   gap: 30px;
@@ -112,8 +112,11 @@ main {
 
   .bio-image {
     grid-area: bioimage;
+    width: 200px;
+    height: 200px;
+    background: url("../img/profile2.jpg");
+    background-size: cover;
     margin: auto;
-    border-radius: 50%;
     border-radius: 50%;
     border: $secondary-color 3px solid;
   }

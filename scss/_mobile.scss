@@ -83,6 +83,7 @@
   }
 
   .about-info {
+    margin: 0;
     grid-template-areas:
       "bioimage"
       "bio"
@@ -94,6 +95,9 @@
 
     .job {
       padding: 30px;
+      ul {
+        padding: 0;
+      }
     }
   }
 }
@@ -126,7 +130,7 @@
   .about-info {
     .job {
       ul {
-        padding: 0;
+        // padding: 0;
       }
     }
   }

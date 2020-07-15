@@ -3,12 +3,34 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .about-info {
+    .job {
+      padding: 65px;
+
+      ul {
+        // align-items: center;
+        // align-content: center;
+        // text-align: center;
+        li {
+          margin: auto;
+        }
+      }
+    }
+  }
 }
 
 // Desktops & Laptops
 @include mediaLg {
   .projects {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-info {
+    // padding: 20px;
+    .job {
+      padding: 35px;
+    }
   }
 }
 
@@ -79,6 +101,10 @@
       "job3";
 
     grid-template-columns: 1fr;
+
+    .job {
+      padding: 30px;
+    }
   }
 }
 
@@ -105,5 +131,15 @@
 
   .projects {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .about-info {
+    padding: 0;
+    margin: 0;
+    .job {
+      ul {
+        padding: 0;
+      }
+    }
   }
 }

@@ -177,9 +177,12 @@ main {
 
 .about-info {
   display: grid;
+  padding: 0;
+  margin: 10px 30px 10px 0px;
+  justify-items: stretch;
   gap: 30px;
-  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-areas: "bioimage bio" "job1 job2" "job3 job3";
+  grid-template-columns: 50% 50%; }
   .about-info .bio-image {
     grid-area: bioimage;
     width: 200px;
@@ -200,8 +203,20 @@ main {
     grid-area: job3; }
   .about-info .job {
     background: #424547;
-    padding: 0.5rem;
     border-bottom: #048cfc 5px solid; }
+    .about-info .job ul {
+      list-style-type: none; }
+      .about-info .job ul li {
+        color: #fff;
+        border: 2px solid #025498;
+        border-radius: 20px;
+        padding: 10px 30px 10px 20px;
+        margin-bottom: 20px;
+        max-width: max-content; }
+      .about-info .job ul li:nth-child(odd) {
+        background: #2a2b2d; }
+      .about-info .job ul li:nth-child(even) {
+        background: #1d1f20; }
 
 .projects {
   display: grid;
@@ -220,7 +235,7 @@ main {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 1rem; }
+  margin-top: 20vh; }
   .boxes div {
     font-size: 2rem;
     border: 3px #fff solid;
@@ -260,11 +275,17 @@ main {
 
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+  .about-info .job {
+    padding: 65px; }
+    .about-info .job ul li {
+      margin: auto; } }
 
 @media screen and (min-width: 971px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  .about-info .job {
+    padding: 35px; } }
 
 @media screen and (max-width: 970px) {
   main {
@@ -306,7 +327,9 @@ main {
       grid-template-columns: repeat(2, 1fr); }
   .about-info {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+    .about-info .job {
+      padding: 30px; } }
 
 @media screen and (max-width: 580px) {
   main {
@@ -318,4 +341,9 @@ main {
       padding-left: 1rem;
       padding-right: 1rem; }
   .projects {
-    grid-template-columns: repeat(1, 1fr); } }
+    grid-template-columns: repeat(1, 1fr); }
+  .about-info {
+    padding: 0;
+    margin: 0; }
+    .about-info .job ul {
+      padding: 0; } }

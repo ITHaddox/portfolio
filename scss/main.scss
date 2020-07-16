@@ -111,14 +111,13 @@ main {
     "bioimage bio"
     "job1 job3"
     "job2 job3";
-  // grid-template-columns: repeat(3, 1fr);
   grid-template-columns: 50% 50%;
 
   .bio-image {
     grid-area: bioimage;
-    width: 200px;
-    height: 200px;
-    background: url("../img/profile2.jpg");
+    width: 400px;
+    height: 400px;
+    background: url("../img/portrait-pic-lg.jpg");
     background-size: cover;
     margin: auto;
     border-radius: 50%;
@@ -127,6 +126,7 @@ main {
 
   .bio {
     grid-area: bio;
+    margin: auto;
     font-size: 1.5rem;
   }
 

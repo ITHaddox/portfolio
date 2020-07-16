@@ -13,6 +13,13 @@
 
 // Desktops & Laptops
 @include mediaLg {
+  .menu-branding {
+    .portrait {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -71,10 +78,10 @@
     background: rgba(lighten($primary-color, 5), 0.99);
 
     .portrait {
-      background: url("../img/profile3.jpg");
+      background: url("../img/portrait-pic-lg.jpg");
       background-size: cover;
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
     }
 
     .projects {
@@ -128,6 +135,11 @@
   }
 
   .about-info {
+    .bio-image {
+      width: 200px;
+      height: 200px;
+    }
+
     .job {
       ul {
         // padding: 0;

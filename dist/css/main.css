@@ -249,14 +249,23 @@ main {
       .boxes div:hover span {
         color: #000; }
 
-.btn, .btn-dark, .btn-light {
+.btn, .btn-title, .btn-dark, .btn-light {
   display: block;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem; }
-  .btn:hover, .btn-dark:hover, .btn-light:hover {
+  .btn:hover, .btn-title:hover, .btn-dark:hover, .btn-light:hover {
     background: #048cfc;
     color: #000; }
+
+.btn-title {
+  height: 400px;
+  background: #1d1f20; }
+  .btn-title h4 {
+    color: #048cfc;
+    font-size: 50px;
+    text-align: center;
+    margin: 20px; }
 
 .btn-dark {
   background: black;

@@ -250,7 +250,7 @@ main {
         color: #000; }
 
 .btn, .btn-title, .btn-dark, .btn-light {
-  display: block;
+  display: flex;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem; }
@@ -260,12 +260,16 @@ main {
 
 .btn-title {
   height: 400px;
-  background: #1d1f20; }
+  background: #1d1f20;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: #048cfc; }
   .btn-title h4 {
-    color: #048cfc;
-    font-size: 50px;
-    text-align: center;
-    margin: 20px; }
+    padding: 0;
+    margin: 15px;
+    font-size: 50px; }
 
 .btn-dark {
   background: black;

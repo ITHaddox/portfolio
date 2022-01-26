@@ -1,40 +1,93 @@
 @import "config";
-@import "menu";
+// @import "menu";
 
 * {
-  box-sizing: border-box;
+  // box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   @include background;
   background: $primary-color;
   color: set-text-color($primary-color);
-  height: 100%;
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  // font-family: 'Nova Flat';
+  // font-family: 'Merienda';
+  font-family: Copperplate / Copperplate Gothic Light, sans-serif;
   line-height: 1.5;
+}
+
+
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background: rgba(lighten($primary-color, 5), 0.5);
+  
+  ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+    
+  
+    li {
+      margin: 0 2rem;
+      padding: 1rem;
+      
+    
+      a {
+        font-size: 1.5rem;
+        text-decoration: none;        
+      }
+    }
+  }  
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
 }
 
 // Headings
 h1,
 h2,
 h3 {
-  margin: 0;
   font-weight: 400;
+
   &.lg-heading {
+    width: 100%;
     font-size: 8rem;
+    font-variant: small-caps;
     position: relative;
+    margin-top: 16rem;
+    background-image: linear-gradient(to bottom right, 
+      rgba(lighten($primary-color, 10), 0.5), 
+      rgba( rgb(0, 99, 180), 0.4 ));
+    // background: rgba(lighten($primary-color, 5), 0.5);
     animation: heading-1;
     animation-duration: 3s;
     animation-fill-mode: forwards;
   }
-  &.sm-heading {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    padding: 0.2rem 4rem;
-    background: rgba(lighten($primary-color, 5), 0.5);
-  }
 }
+
+
 
 @keyframes heading-1 {
   0% {
@@ -47,187 +100,101 @@ h3 {
   }
 }
 
-a {
-  color: set-text-color($primary-color);
-  text-decoration: none;
-}
+.social-icons {
+  font-size: 1.5rem;
+  margin-top: 6rem;
+  // margin-bottom: 6rem;
+  position: relative;
+  text-align: center;
+  animation: icons;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+  a {
+    padding: 2rem;
 
-header {
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-}
-
-.text-secondary {
-  color: $secondary-color;
-}
-
-main {
-  padding: 4rem;
-  min-height: calc(100vh - 60px);
-
-  .social-icons {
-    margin-top: 1rem;
-    margin-left: 6rem;
-    position: relative;
-    animation: icons;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    a {
-      padding: 0.4rem;
-
-      &:hover {
-        color: $secondary-color;
-        @include easeOut();
-      }
-    }
-  }
-
-  &#home {
-    overflow: hidden;
-    h1 {
-      margin-top: 20vh;
+    &:hover {
+      color: $secondary-color;
+      @include easeOut();
     }
   }
 }
+
 
 @keyframes icons {
   0% {
-    left: -200px;
+    // left: -200px;
     opacity: 0%;
   }
   100% {
-    left: 0;
+    // left: 0;
     opacity: inherit;
   }
 }
 
-.about-info {
-  display: grid;
-  justify-items: stretch;
-  margin-right: 50px;
-  gap: 50px;
-  grid-template-areas:
-    "bioimage bio"
-    "job1 job3"
-    "job2 job3";
-  grid-template-columns: 50% 50%;
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
-  .bio-image {
-    grid-area: bioimage;
-    width: 400px;
-    height: 400px;
-    background: url("../img/portrait-pic-lg.jpg");
-    background-size: cover;
-    margin: auto;
-    border-radius: 50%;
-    border: $secondary-color 3px solid;
-  }
-
-  .bio {
-    grid-area: bio;
-    margin: auto;
-    font-size: 1.5rem;
-  }
-
-  .job-1 {
-    grid-area: job1;
-  }
-
-  .job-2 {
-    grid-area: job2;
-  }
-
-  .job-3 {
-    grid-area: job3;
-  }
-
-  .job {
-    background: lighten($primary-color, 5);
-    border-bottom: $secondary-color 5px solid;
-
-    ul {
-      list-style-type: none;
-
-      li {
-        color: #fff;
-        border: 2px solid darken($secondary-color, 20);
-        border-radius: 20px;
-        padding: 10px 30px 10px 20px;
-        margin-bottom: 20px;
-        max-width: max-content;
-      }
-
-      li:nth-child(odd) {
-        background: darken($primary-color, 5);
-      }
-
-      li:nth-child(even) {
-        background: darken($primary-color, 10);
-      }
-    }
+  div {
+    font-size: 2rem;
+    padding: 1.5rem 2.5rem;
+    @include easeOut;
   }
 }
 
+
 // Work/Projects
-.projects {
-  display: grid;
-  gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
+.project {
+  padding: 8rem 10rem 0 10rem;
+  // display: grid;
+  // gap: 8rem;
+  // grid-template-columns: repeat(1, 1fr);
+
+  .item {
+    display: grid;
+    grid-template-areas: 
+    "title title"
+    "desc img";
+    grid-template-columns: 50% 50%;
+  } 
+
 
   .project-title-box {
-    display: flex;
-    color: $primary-color;
+    grid-area: title;
+    color: $secondary-color;
     font-weight: bold;
-    background: lighten($primary-color, 50);
-    height: 6em;
-    font-size: 24px;
-    border: 3px#fff solid;
+    background: rgba(lighten($primary-color, 2), 0.8);   
+    font-size: 3rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
     font-variant: small-caps;
     text-align: center;
     align-items: center;
-    margin-top: 2em;
   }
 
-  .img-box {
-    height: 220px;
-    border: 3px #fff solid;
-    margin-bottom: 5px;
 
-    img {
+  .desc-box {
+    grid-area: desc;
+
+    p {
+      font-size: 2rem;
+      padding: 1.5rem;
+    }
+  }
+
+
+  .img-box {
+    grid-area: img;
+  
+    img {      
       width: 100%;
       height: 100%;
     }
     &:hover {
       opacity: 0.5;
-      border-color: $secondary-color;
       @include easeOut;
-    }
-  }
-}
-
-// Contact Page
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 20vh;
-
-  div {
-    font-size: 2rem;
-    border: 3px #fff solid;
-    padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
-    @include easeOut;
-
-    &:hover {
-      padding: 0.5 1.5rem;
-      background: $secondary-color;
-      color: set-text-color($secondary-color);
-      span {
-        color: set-text-color($secondary-color);
-      }
     }
   }
 }
@@ -235,10 +202,10 @@ main {
 // Button Styles
 .btn {
   display: flex;
-  // display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
+  padding: 0.5rem 2rem;
+  margin: 1rem 2rem 0 0rem;
+  font-size: 22px;
+  
 
   &:hover {
     background: $secondary-color;
@@ -248,7 +215,7 @@ main {
 
 .btn-dark {
   @extend .btn;
-  background: darken($primary-color, 50);
+  background: darken($primary-color, 10);
   color: #fff;
 }
 
@@ -258,12 +225,25 @@ main {
   color: #333;
 }
 
-#main-footer {
-  text-align: center;
-  padding: 1rem;
-  background: darken($primary-color, 10);
+
+
+
+
+a {
   color: set-text-color($primary-color);
-  height: 60px;
+  text-decoration: none;
 }
 
-@import "mobile";
+.text-secondary {
+  color: $secondary-color;
+}
+
+
+
+
+
+
+
+
+
+// @import "mobile";

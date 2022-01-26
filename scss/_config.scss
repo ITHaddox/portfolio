@@ -1,9 +1,12 @@
 $primary-color: rgb(54, 56, 58);
-$secondary-color: rgb(4, 140, 252);
+$secondary-color: rgb(158, 204, 241);
+// $secondary-color: rgb(73, 156, 224);
 $show-home-image: true;
-$home-image: url(../img/circuit3.jpg);
+$home-image: url(../img/circuit2.jpg);
 $background-opacity: 0.9;
-$font-stack: "Bree Serif", serif;
+// $font-stack: "Bree Serif", serif;
+$font-stack: 'Nova Flat';
+
 
 @mixin easeOut {
   transition: all 0.5s ease-out;
@@ -42,13 +45,13 @@ $font-stack: "Bree Serif", serif;
 }
 
 @mixin mediaLg {
-  @media screen and (min-width: 971px) and (max-width: 1170px) {
+  @media screen and (min-width: 971px) and (max-width: 1440px) {
     @content;
   }
 }
 
 @mixin mediaXl {
-  @media screen and (min-width: 1171px) {
+  @media screen and (min-width: 1441px) {
     @content;
   }
 }

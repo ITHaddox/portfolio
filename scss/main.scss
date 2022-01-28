@@ -147,7 +147,7 @@ h3 {
 
 // Work/Projects
 .project {
-  padding: 8rem 10rem 0 10rem;
+  padding: 8rem 10rem 0rem 10rem;
   // display: grid;
   // gap: 8rem;
   // grid-template-columns: repeat(1, 1fr);
@@ -177,10 +177,15 @@ h3 {
 
   .desc-box {
     grid-area: desc;
+    height: 30rem;
 
     p {
       font-size: 2rem;
       padding: 1.5rem;
+    }
+
+    a {
+      
     }
   }
 
